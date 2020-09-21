@@ -90,7 +90,9 @@
                     <connections>
                         <outlet property="CalcButton" destination="6L1-vP-i16" id="Obh-Y5-Ejh"/>
                         <outlet property="HumidityLabel" destination="K2M-Pc-JFH" id="eXV-Oz-Cmo"/>
+                        <outlet property="ResultImage" destination="UHP-oi-eaL" id="9f2-bV-gK1"/>
                         <outlet property="calcResultLabel" destination="XpS-Ri-yoy" id="dtM-9b-aOs"/>
+                        <outlet property="explanation" destination="Zme-c6-ugY" id="hUp-FG-8N5"/>
                         <outlet property="temperatureLabel" destination="mU7-9d-KSH" id="0CP-gk-PNe"/>
                     </connections>
                 </viewController>
