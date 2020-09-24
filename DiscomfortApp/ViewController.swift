@@ -50,7 +50,9 @@ class ViewController: UIViewController {
         ResultImage.image = image
     }
     
-    var resultArray = [String]()
+    var resultArray:[String] = []
+    let date = Date()
+    
     
     //    計算ボタンのアクション
     @IBAction func CalcButton(_ sender: Any) {
@@ -60,6 +62,8 @@ class ViewController: UIViewController {
             calcresult = 0.81 * temperature + 0.01 * humidity * (0.99 * temperature - 14.3) + 46.3
 //            print(calcresult)
         }
+        
+        
         switch calcresult {
         case 0..<55:
             calcResultLabel.text = String(calcresult)
@@ -100,8 +104,9 @@ class ViewController: UIViewController {
         resultArray.append(calcResultLabel.text!)
         //        testOK!
         print(resultArray)
-        //        ユーザーデフォルトに保存する
-        UserDefaults.standard.set(calcresult, forKey: "calc")
+        //        ユーザーデフォルトに保存する(resultArrayだと画像を変更されない)
+        UserDefaults.standard.set(resultArray, forKey: "calc")
+        
     }
     
     

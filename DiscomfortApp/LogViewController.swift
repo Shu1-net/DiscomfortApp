@@ -22,6 +22,10 @@ class LogViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             print(resultArray2)
 
         }
+        
+        logTableView.delegate = self
+        logTableView.dataSource = self
+        
     }
     
     var resultArray2:[String] = []
@@ -38,17 +42,28 @@ class LogViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         return resultArray2.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = logTableView.dequeueReusableCell(withIdentifier: "cell", for:indexPath)
+        let cell = logTableView.dequeueReusableCell(withIdentifier: "Cell", for:indexPath)
         
-        cell.textLabel?.text = resultArray2[indexPath.row]
+        cell.textLabel?.text = "\(resultArray2[indexPath.row])"
         
         print(resultArray2)
         
         return cell
-        
-        
+    }
+    
+//    削除機能
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            
+            resultArray2.remove(at: indexPath.row)
+            
+            UserDefaults.standard.set(resultArray2, forKey: "calc")
+            
+            logTableView.reloadData()
+        }
     }
     
     
