@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     
     //    計算結果の初期値
     var calcresult:Double = 0
-    
+//    image用変数
     var dispImageNum = 0
     
     func dispImage() {
@@ -50,8 +50,18 @@ class ViewController: UIViewController {
         ResultImage.image = image
     }
     
+//    計算結果を配列へ格納
     var resultArray:[String] = []
-    let date = Date()
+//    dateを配列へ格納
+    var appendDate:[String] = []
+//    温度を配列へ格納
+    var temperatureArray:[String] = []
+//    湿度を配列へ格納
+    var HumidityArray:[String] = []
+    
+    
+    /// DateFomatterクラスのインスタンス生成
+    let dateFormatter = DateFormatter()
     
     
     //    計算ボタンのアクション
@@ -62,8 +72,6 @@ class ViewController: UIViewController {
             calcresult = 0.81 * temperature + 0.01 * humidity * (0.99 * temperature - 14.3) + 46.3
 //            print(calcresult)
         }
-        
-        
         switch calcresult {
         case 0..<55:
             calcResultLabel.text = String(calcresult)
@@ -98,17 +106,36 @@ class ViewController: UIViewController {
         default:
             calcResultLabel.text = "error"
         }
-        
         dispImage()
         //        計算ボタンが押されたら､calcResultLabelの値を配列に追加する｡
         resultArray.append(calcResultLabel.text!)
         //        testOK!
-        print(resultArray)
+//        print(resultArray)
         //        ユーザーデフォルトに保存する(resultArrayだと画像を変更されない)
         UserDefaults.standard.set(resultArray, forKey: "calc")
+        /// カレンダー、ロケール、タイムゾーンの設定（未指定時は端末の設定が採用される）
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        dateFormatter.locale = Locale(identifier: "ja_JP")
+        dateFormatter.timeZone = TimeZone(identifier:  "Asia/Tokyo")
+        /// 変換フォーマット定義（未設定の場合は自動フォーマットが採用される）
+        dateFormatter.dateFormat = "yyyy年M月d日(EEEEE) H時m分s秒"
+        /// データ変換（Date→テキスト）
+        let dateString = dateFormatter.string(from: Date())
         
+        appendDate.append(dateString)
+//        チェックOK!
+//        print(appendDate)
+        // ユーザーデフォルトに保存する(resultArrayだと画像を変更されない)
+        UserDefaults.standard.set(appendDate, forKey: "date")
+        
+//        配列へ温度データを格納
+        temperatureArray.append(temperatureLabel.text!)
+//        温度入力値を保存
+        UserDefaults.standard.set(temperatureArray, forKey: "temp")
+//        配列へ湿度データを格納
+        HumidityArray.append(HumidityLabel.text!)
+//        湿度入力値を保存
+        UserDefaults.standard.set(HumidityArray, forKey: "humi")
     }
-    
-    
 }
 
