@@ -18,7 +18,7 @@ class LogViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         if UserDefaults.standard.object(forKey: "calc") != nil {
             
             resultArray2 = UserDefaults.standard.object(forKey: "calc") as![String]
-            //            print(resultArray2)
+            print(resultArray2)
         }
         if UserDefaults.standard.object(forKey: "date") != nil {
             
@@ -41,8 +41,23 @@ class LogViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         logTableView.delegate = self
         logTableView.dataSource = self
         
-        
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetailSegue" {
+            if let indexPath = logTableView.indexPathForSelectedRow {
+                 let nextView = segue.destination as! ReportViewController
+//                destination.animal = animals[indexPath.row]
+                nextView.ReportDateLabel = appendDate2[indexPath.row]
+                nextView.ReportTempLabel = temperatureArray2[indexPath.row]
+                nextView.ReportHumiLabel = HumidityArray2[indexPath.row]
+                nextView.ReportIndexLabel = resultArray2[indexPath.row]
+                
+            }
+        }
+    }
+    
     
     var resultArray2:[String] = []
     var appendDate2:[String] = []
@@ -67,12 +82,6 @@ class LogViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = logTableView.dequeueReusableCell(withIdentifier: "Cell", for:indexPath)
-        
-        //        cell.textLabel?.text = "\(resultArray2[indexPath.row])"
-        //
-        //        print(resultArray2)
-        //
-        //        return cell
         
         let appendDateLabel = cell.viewWithTag(1) as! UILabel
         appendDateLabel.text = appendDate2[indexPath.row]
@@ -105,6 +114,9 @@ class LogViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             
             logTableView.reloadData()
         }
+        
+        
+        
     }
     
     

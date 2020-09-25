@@ -9,12 +9,48 @@
 import UIKit
 
 class ReportViewController: UIViewController {
+    
+    
+    @IBOutlet var reportDateLabel: UILabel!
+    
+    @IBOutlet var reportTempLabel: UILabel!
+    
+    @IBOutlet var reportHumiLabel: UILabel!
+    
+    @IBOutlet var reportIndexLabel: UILabel!
+    
+    @IBOutlet var logText: UITextField!
+    
+    @IBAction func logText(_ sender: Any) {
+    }
+    
+    @IBAction func reportButton(_ sender: Any) {
+    }
+    
+    var ReportDateLabel = ""
+    var ReportTempLabel = ""
+    var ReportHumiLabel = ""
+    var ReportIndexLabel = ""
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        reportTempLabel.text = ReportTempLabel
+        reportDateLabel.text = ReportDateLabel
+        reportHumiLabel.text = ReportHumiLabel
+        reportIndexLabel.text = ReportIndexLabel
+        
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    
+    
+    
     
 
     /*
