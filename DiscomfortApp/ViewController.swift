@@ -8,14 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         calcResultLabel.text = String("")
         explanation.text = String("")
-        
+//        テキストデータの情報を得るためのデリゲード
+        temperatureLabel.delegate = self
+        HumidityLabel.delegate = self
     }
     
     //    温度テキストフィールド
@@ -62,6 +64,8 @@ class ViewController: UIViewController {
     
     /// DateFomatterクラスのインスタンス生成
     let dateFormatter = DateFormatter()
+    
+
     
     
     //    計算ボタンのアクション
@@ -118,7 +122,7 @@ class ViewController: UIViewController {
         dateFormatter.locale = Locale(identifier: "ja_JP")
         dateFormatter.timeZone = TimeZone(identifier:  "Asia/Tokyo")
         /// 変換フォーマット定義（未設定の場合は自動フォーマットが採用される）
-        dateFormatter.dateFormat = "yyyy年M月d日(EEEEE) H時m分s秒"
+        dateFormatter.dateFormat = "yyyy年M月d日(EEEEE) H時m分"
         /// データ変換（Date→テキスト）
         let dateString = dateFormatter.string(from: Date())
         
@@ -136,6 +140,12 @@ class ViewController: UIViewController {
         HumidityArray.append(HumidityLabel.text!)
 //        湿度入力値を保存
         UserDefaults.standard.set(HumidityArray, forKey: "humi")
+        
+//        計算ボタン押下でキーボードを消す
+        temperatureLabel.endEditing(true)
+        HumidityLabel.endEditing(true)
+        
+        
     }
 }
 
