@@ -80,7 +80,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
         //        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "ydMMM", options: 0, locale: Locale(identifier: "ja_JP"))
         if let temperature = Double(temperatureLabel.text!), let humidity = Double(HumidityLabel.text!){
             //        不快指数＝0.81×気温+0.01×湿度x(0.99×温度－14.3)+46.3
-            calcresult = 0.81 * temperature + 0.01 * humidity * (0.99 * temperature - 14.3) + 46.3
+            calcresult = round(0.81 * temperature + 0.01 * humidity * (0.99 * temperature - 14.3) + 46.3)
 //            print(calcresult)
         }
         switch calcresult {
@@ -88,10 +88,12 @@ class ViewController: UIViewController,UITextFieldDelegate {
             calcResultLabel.text = String(calcresult)
             calcResultLabel.textColor = UIColor.blue
             explanation.text = "寒いので室温をあげてください"
+            dispImageNum = 0
         case 55..<60:
             calcResultLabel.text = String(calcresult)
             calcResultLabel.textColor = UIColor.blue
             explanation.text = "肌寒いのやや室温をあげてください"
+            dispImageNum = 0
         case 60..<65:
             calcResultLabel.text = String(calcresult)
             calcResultLabel.textColor = UIColor.black
