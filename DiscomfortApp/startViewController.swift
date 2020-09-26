@@ -18,6 +18,13 @@ class startViewController: UIViewController {
     
     @IBAction func startButton(_ sender: Any) {
         
+        // ②遷移先NavigationControllerのインスタンス取得
+           //   Navigation ControllerのStoryboard IDが"NC1"に設定されている例
+           //   インスタンスのクラスはUINavigationController
+        let nextView = storyboard?.instantiateViewController(withIdentifier: "Calc") as! UITabBarController
+        
+           // ③画面遷移（presentメソッドを使う）
+           self.present(nextView, animated: true, completion: nil)
         
     }
     

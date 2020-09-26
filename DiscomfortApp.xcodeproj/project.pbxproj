@@ -11,12 +11,11 @@
 		9D1BF81F25182FBD00D949DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1BF81E25182FBD00D949DD /* SceneDelegate.swift */; };
 		9D1BF82125182FBD00D949DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1BF82025182FBD00D949DD /* ViewController.swift */; };
 		9D1BF82425182FBD00D949DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1BF82225182FBD00D949DD /* Main.storyboard */; };
-		9D1BF82625182FBF00D949DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D1BF82525182FBF00D949DD /* Assets.xcassets */; };
 		9D1BF82925182FBF00D949DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1BF82725182FBF00D949DD /* LaunchScreen.storyboard */; };
 		9D1BF831251835D000D949DD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1BF830251835D000D949DD /* DetailsViewController.swift */; };
 		9D1BF833251836AF00D949DD /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1BF832251836AF00D949DD /* LogViewController.swift */; };
 		9D1BF835251841AC00D949DD /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1BF834251841AC00D949DD /* ReportViewController.swift */; };
-		9D817B29251F3E1D008303D3 /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D817B28251F3E1D008303D3 /* startViewController.swift */; };
+		9DA0E900252006E00028886E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DA0E8FF252006E00028886E /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,13 +24,12 @@
 		9D1BF81E25182FBD00D949DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9D1BF82025182FBD00D949DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9D1BF82325182FBD00D949DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9D1BF82525182FBF00D949DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D1BF82825182FBF00D949DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D1BF82A25182FBF00D949DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D1BF830251835D000D949DD /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		9D1BF832251836AF00D949DD /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		9D1BF834251841AC00D949DD /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
-		9D817B28251F3E1D008303D3 /* startViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startViewController.swift; sourceTree = "<group>"; };
+		9DA0E8FF252006E00028886E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,14 +64,13 @@
 			children = (
 				9D1BF81C25182FBD00D949DD /* AppDelegate.swift */,
 				9D1BF81E25182FBD00D949DD /* SceneDelegate.swift */,
-				9D817B28251F3E1D008303D3 /* startViewController.swift */,
 				9D1BF82025182FBD00D949DD /* ViewController.swift */,
 				9D1BF830251835D000D949DD /* DetailsViewController.swift */,
 				9D1BF832251836AF00D949DD /* LogViewController.swift */,
 				9D1BF834251841AC00D949DD /* ReportViewController.swift */,
 				9D1BF82225182FBD00D949DD /* Main.storyboard */,
-				9D1BF82525182FBF00D949DD /* Assets.xcassets */,
 				9D1BF82725182FBF00D949DD /* LaunchScreen.storyboard */,
+				9DA0E8FF252006E00028886E /* Assets.xcassets */,
 				9D1BF82A25182FBF00D949DD /* Info.plist */,
 			);
 			path = DiscomfortApp;
@@ -138,7 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D1BF82925182FBF00D949DD /* LaunchScreen.storyboard in Resources */,
-				9D1BF82625182FBF00D949DD /* Assets.xcassets in Resources */,
+				9DA0E900252006E00028886E /* Assets.xcassets in Resources */,
 				9D1BF82425182FBD00D949DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,7 +148,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D1BF82125182FBD00D949DD /* ViewController.swift in Sources */,
-				9D817B29251F3E1D008303D3 /* startViewController.swift in Sources */,
 				9D1BF833251836AF00D949DD /* LogViewController.swift in Sources */,
 				9D1BF835251841AC00D949DD /* ReportViewController.swift in Sources */,
 				9D1BF81D25182FBD00D949DD /* AppDelegate.swift in Sources */,
