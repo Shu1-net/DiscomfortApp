@@ -58,8 +58,8 @@ class ReportViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         reportDateLabel.text = ReportDateLabel
-        reportTempLabel.text = ReportTempLabel
-        reportHumiLabel.text = ReportHumiLabel
+        reportTempLabel.text = ("\(ReportTempLabel)℃")
+        reportHumiLabel.text = ("\(ReportHumiLabel)%")
         reportIndexLabel.text = ReportIndexLabel
         logLabel.text = ""
         // Do any additional setup after loading the view.

@@ -46,7 +46,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     var dispImageNum = 0
     
     func dispImage() {
-        let imageArray = ["samui","ojiisan","uchiwa","atsui"]
+        let imageArray = ["samui","ojiisan","uchiwa","atsui","error"]
         let name = imageArray[dispImageNum]
         let image = UIImage(named: name)
         ResultImage.image = image
@@ -65,7 +65,14 @@ class ViewController: UIViewController,UITextFieldDelegate {
     /// DateFomatterクラスのインスタンス生成
     let dateFormatter = DateFormatter()
     
+    //    テキストフィールドの外側タッチでキーボードを消す動作
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     
     //    計算ボタンのアクション
@@ -79,36 +86,47 @@ class ViewController: UIViewController,UITextFieldDelegate {
         switch calcresult {
         case 0..<55:
             calcResultLabel.text = String(calcresult)
-            explanation.text = "寒い"
+            calcResultLabel.textColor = UIColor.blue
+            explanation.text = "寒いので室温をあげてください"
         case 55..<60:
             calcResultLabel.text = String(calcresult)
-            explanation.text = "肌寒い"
+            calcResultLabel.textColor = UIColor.blue
+            explanation.text = "肌寒いのやや室温をあげてください"
         case 60..<65:
             calcResultLabel.text = String(calcresult)
-            explanation.text = "何も感じない"
+            calcResultLabel.textColor = UIColor.black
+            explanation.text = "快適な室温です､問題ありません"
             dispImageNum = 1
         case 65..<70:
             calcResultLabel.text = String(calcresult)
-            explanation.text = "快い"
+            calcResultLabel.textColor = UIColor.black
+            explanation.text = "快適な室温です､問題ありません"
             dispImageNum = 1
         case 70..<75:
             calcResultLabel.text = String(calcresult)
-            explanation.text = "暑くない"
+            calcResultLabel.textColor = UIColor.orange
+            explanation.text = "指数が少し高いですが､問題ない範囲です"
             dispImageNum = 1
         case 75..<80:
             calcResultLabel.text = String(calcresult)
-            explanation.text = "やや暑い"
+            calcResultLabel.textColor = UIColor.orange
+            explanation.text = "少し暑いので室温をやや下げてください"
             dispImageNum = 2
         case 80..<85:
             calcResultLabel.text = String(calcresult)
-            explanation.text = "暑くて汗がでる"
+            calcResultLabel.textColor = UIColor.red
+            explanation.text = "暑くるしい状態です｡室温を下げてください"
             dispImageNum = 2
         case 85..<100:
             calcResultLabel.text = String(calcresult)
-            explanation.text = "暑くてたまらない"
+            calcResultLabel.textColor = UIColor.red
+            explanation.text = "直ちに室温を下げてください"
             dispImageNum = 3
         default:
-            calcResultLabel.text = "error"
+            calcResultLabel.text = "100を超過しています"
+            calcResultLabel.textColor = UIColor.black
+            explanation.text = "再計算してください"
+            dispImageNum = 4
         }
         dispImage()
         //        計算ボタンが押されたら､calcResultLabelの値を配列に追加する｡
