@@ -15,6 +15,51 @@ class LogViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
         super.viewDidLoad()
         //        ViewControllerのユーザーデフォルトで保存した計算結果のnilチェック
         //        　nil以外だった場合はresultArray2に保存する
+//        if UserDefaults.standard.object(forKey: "calc") != nil {
+//
+//            resultArray2 = UserDefaults.standard.object(forKey: "calc") as![String]
+//            print(resultArray2)
+//        }
+//        if UserDefaults.standard.object(forKey: "date") != nil {
+//
+//            appendDate2 = UserDefaults.standard.object(forKey: "date") as![String]
+//
+//            print(appendDate2)
+//        }
+//        if UserDefaults.standard.object(forKey: "temp") != nil {
+//
+//            temperatureArray2 = UserDefaults.standard.object(forKey: "temp") as![String]
+//
+//            print(temperatureArray2)
+//        }
+//        if UserDefaults.standard.object(forKey: "humi") != nil {
+//
+//            HumidityArray2 = UserDefaults.standard.object(forKey: "humi") as![String]
+//
+//            print(HumidityArray2)
+//        }
+        logTableView.delegate = self
+        logTableView.dataSource = self
+
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetailSegue" {
+            if let indexPath = logTableView.indexPathForSelectedRow {
+                 let nextView = segue.destination as! ReportViewController
+//                destination.animal = animals[indexPath.row]
+                nextView.ReportDateLabel = appendDate2[indexPath.row]
+                nextView.ReportTempLabel = temperatureArray2[indexPath.row]
+                nextView.ReportHumiLabel = HumidityArray2[indexPath.row]
+                nextView.ReportIndexLabel = resultArray2[indexPath.row]
+                
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
         if UserDefaults.standard.object(forKey: "calc") != nil {
             
             resultArray2 = UserDefaults.standard.object(forKey: "calc") as![String]
@@ -38,24 +83,9 @@ class LogViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
             
             print(HumidityArray2)
         }
-        logTableView.delegate = self
-        logTableView.dataSource = self
         
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetailSegue" {
-            if let indexPath = logTableView.indexPathForSelectedRow {
-                 let nextView = segue.destination as! ReportViewController
-//                destination.animal = animals[indexPath.row]
-                nextView.ReportDateLabel = appendDate2[indexPath.row]
-                nextView.ReportTempLabel = temperatureArray2[indexPath.row]
-                nextView.ReportHumiLabel = HumidityArray2[indexPath.row]
-                nextView.ReportIndexLabel = resultArray2[indexPath.row]
-                
-            }
-        }
+        logTableView.reloadData()
+        print("viewWillAppear")
     }
     
     
@@ -64,6 +94,8 @@ class LogViewController: UIViewController,UITableViewDelegate,UITableViewDataSou
     var temperatureArray2:[String] = []
     var HumidityArray2:[String] = []
     
+    
+   
     
     @IBOutlet var logTableView: UITableView!
     

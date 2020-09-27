@@ -16,6 +16,7 @@
 		9D1BF833251836AF00D949DD /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1BF832251836AF00D949DD /* LogViewController.swift */; };
 		9D1BF835251841AC00D949DD /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1BF834251841AC00D949DD /* ReportViewController.swift */; };
 		9DA0E900252006E00028886E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DA0E8FF252006E00028886E /* Assets.xcassets */; };
+		9DA0E902252017AD0028886E /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA0E901252017AD0028886E /* TabbarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9D1BF832251836AF00D949DD /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		9D1BF834251841AC00D949DD /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		9DA0E8FF252006E00028886E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9DA0E901252017AD0028886E /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				9D1BF81C25182FBD00D949DD /* AppDelegate.swift */,
 				9D1BF81E25182FBD00D949DD /* SceneDelegate.swift */,
+				9DA0E901252017AD0028886E /* TabbarViewController.swift */,
 				9D1BF82025182FBD00D949DD /* ViewController.swift */,
 				9D1BF830251835D000D949DD /* DetailsViewController.swift */,
 				9D1BF832251836AF00D949DD /* LogViewController.swift */,
@@ -149,6 +152,7 @@
 			files = (
 				9D1BF82125182FBD00D949DD /* ViewController.swift in Sources */,
 				9D1BF833251836AF00D949DD /* LogViewController.swift in Sources */,
+				9DA0E902252017AD0028886E /* TabbarViewController.swift in Sources */,
 				9D1BF835251841AC00D949DD /* ReportViewController.swift in Sources */,
 				9D1BF81D25182FBD00D949DD /* AppDelegate.swift in Sources */,
 				9D1BF81F25182FBD00D949DD /* SceneDelegate.swift in Sources */,

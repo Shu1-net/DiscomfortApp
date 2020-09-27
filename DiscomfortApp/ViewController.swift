@@ -166,6 +166,12 @@ class ViewController: UIViewController,UITextFieldDelegate {
         HumidityLabel.endEditing(true)
         
         
+//
+//        let navVC = tabBarController?.viewControllers![2] as! UINavigationController
+//        let logVC = navVC.viewControllers[0] as! LogViewController
+//
+////        tabBarController?.selectedIndex = 2
+        
     }
 }
 
