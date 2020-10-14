@@ -4,7 +4,7 @@
 //
 //  Created by 米倉謙 on 2020/09/21.
 //  Copyright © 2020 kenyonekura.com. All rights reserved.
-//
+//  checked by 天野修一
 
 import UIKit
 
